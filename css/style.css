@@ -1,0 +1,13 @@
+* {
+
+}
+
+#services .card {
+    height: 310px !important;
+}
+
+#services .card img {
+    object-fit: contain;
+    height: 100%;
+    max-width: 210px;
+}
