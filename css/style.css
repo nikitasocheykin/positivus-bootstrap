@@ -23,6 +23,10 @@ header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-image: url("/img/menu-close.svg");
 }
 
+input {
+    min-height: 60px;
+}
+
 .btn {
     padding: 20px 35px;
     border-radius: 15px;
@@ -38,6 +42,18 @@ header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     --bs-btn-active-color: #000;
     --bs-btn-active-bg: #B9FF66;
     --bs-btn-active-border-color: #B9FF66;
+}
+
+.btn-secondary {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #b9ff66;
+    --bs-btn-border-color: #b9ff66;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-border-color: #000;
 }
 
 .btn-outline-primary {
@@ -88,7 +104,15 @@ header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .card-tertiary {
     background-color: #191A23;
-    color: #FFF;
+    color:#FFF;
+}
+
+#services .card a img {
+    transition: all 150ms ease-in-out;
+}
+
+#services .card a:hover img{
+    transform: rotate(30deg);
 }
 
 #Licences {
@@ -180,6 +204,11 @@ header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     box-shadow: 0 5px 0 0 #191A23;
 }
 
+.dropdown-menu {
+    --bs-dropdown-link-active-bg: #b9ff66;
+    --bs-dropdown-link-active-color: #000;
+}
+
 #team .card div>div{
     align-self: flex-end;
 }
@@ -187,4 +216,81 @@ header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .card-body p {
     padding-top: 10px;
     border-top: #000 1px solid;
+}
+
+.carousel {
+    background-color: #F3F3F3;
+    border-radius: 45px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    transition: all 150ms ease-in-out;
+}
+
+.carousel-item blockquote {
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 45px;
+    outline: #000 1px solid;
+    box-shadow: 0 5px 0 0 #191A23;
+    margin-bottom: 40px;
+    width: 80%;
+    margin-inline: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #000;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("/img/Arrow-left.svg");
+}
+
+.carousel-control-next-icon {
+    background-image: url("/img/Arrow-right.svg");
+}
+
+.blockquote-footer {
+    color: #000;
+}
+
+.blockquote-footer::before {
+    display: none;
+}
+
+footer .nav a{
+    color: #FFF;
+    text-decoration: underline;
+}
+
+footer .nav a:hover{
+    text-decoration: none;
+    color: #F3F3F3;
+}
+
+footer a:first-of-type {
+    color: #FFF;
+}
+
+footer a:first-of-type:hover {
+    text-decoration: none;
+}
+
+#Licences,
+.accordion-item,
+.card,
+.carousel-item blockquote {
+  transition: all 150ms ease-in-out;
+}
+
+#Licences:hover,
+.accordion-item:hover,
+.card:hover,
+.carousel-item blockquote:hover {
+  box-shadow: none;
+  transform: translateY(5px);
 }
