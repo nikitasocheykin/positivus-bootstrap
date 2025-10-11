@@ -32,7 +32,7 @@
                                 <a class="nav-link" href="#testimonials">Testimonials</a>
                             </li>
                             <li class="nav-item mt-4 mb-4 mt-lg-0 mb-lg-0 ms-lg-3">
-                                <a class="btn btn-outline-primary" href="#footer">Request a quote</a>
+                                <button class="btn btn-outline-primary" data-bs-target="#quoteModal" data-bs-toggle="modal" type="button">Request a quote</button>
                             </li>
                         </ul>
                     </div>
@@ -48,7 +48,7 @@
                             <p class="mb-4">
                                 Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.
                             </p>
-                            <a class="btn btn-primary" href="#footer">Book a consultation</a>
+                            <button class="btn btn-primary" data-bs-target="#quoteModal" data-bs-toggle="modal" type="button">Book a consultation</button>
                         </div>
                         <div class="col-12 col-lg-6">
                             <img alt="Hero illustration" class="img-fluid" src="img/illustration.png" />
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row align-items-center g-4 mt-4" id="Licences">
+                    <div class="row p-4 align-items-center g-4 mt-4" id="Licences">
                         <div class="col-12 col-md-7 col-lg-8">
                             <h3 class="h4">Let’s make docs transparent</h3>
                             <p class="mb-0">
@@ -694,9 +694,10 @@
                         </ul>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <form class="row g-2">
+                        <form class="row g-2 needs-validation" id="subscribeForm" novalidate>
                             <div class="col-12 col-sm flex-grow-1">
-                                <input class="form-control h-100" placeholder="Email" type="email" />
+                                <input class="form-control" style="height: 75px;" placeholder="Email" id="subscribeEmail" required type="email" />
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
                             <div class="col-12 col-sm-auto">
                                 <button class="btn btn-secondary w-100" type="submit">Subscribe to news</button>
@@ -713,44 +714,115 @@
         </footer>
         <div aria-hidden="true" aria-labelledby="quoteModalLabel" class="modal fade" id="quoteModal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalLabel">Request a quote</h5>
-                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
-                    </div>
-                    <form id="quoteForm">
-                        <div class="modal-body">
+                <div class="modal-content overflow-hidden pt-5 pt-md-5 p-3 p-md-5">
+                    <button aria-label="Close" class="modal-close-btn" data-bs-dismiss="modal" type="button">
+                        <img alt="close" src="/img/close.svg" />
+                    </button>
+                    <form class="needs-validation" id="quoteForm" novalidate>
+                        <div class="modal-body mt-2 mt-md-0">
                             <div class="mb-3">
-                                <label class="form-label" for="qname">Full name</label>
-                                <input class="form-control" id="qname" name="name" placeholder="Your name" required type="text" />
+                                <label class="form-label" for="qname">Name *</label>
+                                <input class="form-control" id="qname" name="name" placeholder="Name" required type="text" />
+                                <div class="invalid-feedback">Please provide your name.</div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="qemail">Email</label>
-                                <input class="form-control" id="qemail" name="email" placeholder="you@example.com" required type="email" />
+                                <label class="form-label" for="qemail">Email *</label>
+                                <input class="form-control" id="qemail" name="email" placeholder="Email" required type="email" />
+                                <div class="invalid-feedback">Please provide a valid email address.</div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="qmessage">Message</label>
-                                <textarea class="form-control" id="qmessage" name="message" placeholder="Tell us about your project" rows="4"></textarea>
+                                <label class="form-label" for="qmessage">Message *</label>
+                                <textarea class="form-control" id="qmessage" name="message" placeholder="Message" required rows="4"></textarea>
+                                <div class="invalid-feedback">Please enter a message.</div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
-                            <button class="btn btn-primary" type="submit">Send request</button>
+                            <button class="btn btn-primary" type="submit">Send message</button>
                         </div>
                     </form>
+                    <img alt="" aria-hidden="true" class="form_img d-none d-md-block" src="/img/Illustration-8.png" />
                 </div>
             </div>
         </div>
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
-            <div aria-atomic="true" aria-live="polite" class="toast align-items-center border-0" id="subscribeToast" role="status">
+            <div aria-atomic="true" aria-live="polite" class="toast align-items-center border-0" data-bs-autohide="true" data-bs-delay="4000" id="subscribeToast" role="status">
                 <div class="d-flex">
-                    <div class="toast-body">
-                        You are successfully subscribed to the newsletter!
+                    <div class="toast-body fs-6 p-4">
+                        You are successfully <span class="fw-bold">subscribed to the newsletter!</span>
                     </div>
-                    <button aria-label="Close" class="btn-close me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+                    <img src="/img/email.svg" alt="Email Icon" class="me-2">
+                </div>
+            </div>
+            <div aria-atomic="true" aria-live="polite" class="toast border-0 mt-2" data-bs-autohide="true" data-bs-delay="4000" id="quoteToast" role="status">
+                <div class="toast-body fs-6 p-4">
+                    Thank you! Your request has been sent successfully.
                 </div>
             </div>
         </div>
         <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            (() => {
+                "use strict";
+                const navCollapse = document.getElementById("navbarMain");
+                if (navCollapse) {
+                    const navItems = navCollapse.querySelectorAll(".nav-link, .btn");
+                    navItems.forEach((item) => {
+                        item.addEventListener("click", () => {
+                            if (navCollapse.classList.contains("show")) {
+                                bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+                            }
+                        });
+                    });
+                }
+
+                const subscribeToastElement = document.getElementById("subscribeToast");
+                const quoteToastElement = document.getElementById("quoteToast");
+                const showToast = (element) => {
+                    if (!element) {
+                        return;
+                    }
+                    bootstrap.Toast.getOrCreateInstance(element).show();
+                };
+
+                const forms = document.querySelectorAll(".needs-validation");
+                Array.from(forms).forEach((form) => {
+                    form.addEventListener(
+                        "submit",
+                        (event) => {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                                form.classList.add("was-validated");
+                                return;
+                            }
+
+                            event.preventDefault();
+                            form.classList.add("was-validated");
+
+                            if (form.id === "quoteForm") {
+                                const modalElement = document.getElementById("quoteModal");
+                                if (modalElement) {
+                                    if (quoteToastElement) {
+                                        modalElement.addEventListener(
+                                            "hidden.bs.modal",
+                                            () => showToast(quoteToastElement),
+                                            { once: true }
+                                        );
+                                    }
+                                    const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+                                    modal.hide();
+                                }
+                            }
+
+                            if (form.id === "subscribeForm") {
+                                showToast(subscribeToastElement);
+                            }
+
+                            form.reset();
+                            form.classList.remove("was-validated");
+                        },
+                        false
+                    );
+                });
+            })();
+        </script>
     </body>
 </html>

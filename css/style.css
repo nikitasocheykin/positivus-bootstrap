@@ -8,6 +8,11 @@
     --bs-border-radius: 15px;
 }
 
+section.py-5 {
+    padding-top: 6rem !important;
+    padding-bottom: 1rem !important;
+}
+
 header .navbar-toggler {
   border: none;
 }
@@ -24,7 +29,18 @@ header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 input {
-    min-height: 60px;
+    min-height: 50px;
+    max-height: 66px;
+}
+
+#quoteForm input, #quoteForm textarea {
+    border-color: #000;
+    resize: none;
+}
+
+#quoteForm input:focus, #quoteForm textarea:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .btn {
@@ -121,7 +137,6 @@ input {
     display: flex;
     align-items: center;
     outline: #000 1px solid;
-    padding: 30px;
     background-color: hsla(0, 0%, 95%, 1);
     border-radius: 45px;
     box-shadow: 0 5px 0 0 #191A23;
@@ -293,4 +308,61 @@ footer a:first-of-type:hover {
 .carousel-item blockquote:hover {
   box-shadow: none;
   transform: translateY(5px);
+}
+
+.modal {
+    --bs-modal-width: 970px;
+}
+
+.modal form {
+    max-width: 500px;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 45px;
+    background-color: #F3F3F3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    line-height: 0;
+    z-index: 2;
+}
+
+.modal-close-btn img {
+    width: 58px;
+    height: 58px;
+}
+
+#quoteModal form {
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    #quoteModal .modal-content {
+        min-height: 420px;
+        padding-right: 55%;
+    }
+
+    #quoteModal .form_img {
+        position: absolute;
+        top: 0;
+        right: -253px;
+        bottom: 0;
+        width: 55%;
+        height: 100%;
+        object-fit: contain;
+        pointer-events: none;
+        z-index: 0;
+    }
 }
