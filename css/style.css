@@ -1,5 +1,54 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+* {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+:root {
+    --bs-border-radius: 15px;
+}
+
+header .navbar-toggler {
+  border: none;
+}
+header .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+header .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon {
+  background-image: url("/img/menu-open.svg");
+}
+
+header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-image: url("/img/menu-close.svg");
+}
+
+.btn {
+    padding: 20px 35px;
+    border-radius: 15px;
+}
+
+.btn-primary {
+    --bs-btn-color: #FFF;
+    --bs-btn-bg: #000;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #B9FF66;
+    --bs-btn-hover-border-color: #B9FF66;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #B9FF66;
+    --bs-btn-active-border-color: #B9FF66;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #000;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #FFF;
+    --bs-btn-hover-bg: #000;
+    --bs-btn-hover-border-color: #000;
+    --bs-btn-active-color: #FFF;
+    --bs-btn-active-bg: #000;
+    --bs-btn-active-border-color: #000;
 }
 
 #services .card {
@@ -10,4 +59,132 @@
     object-fit: contain;
     height: 100%;
     max-width: 210px;
+}
+
+#services .card .card-body a {
+    line-height: 100%;
+    color: inherit;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #services .card>img {
+        position: relative;
+        right: 10%;
+    }
+    #services .card a>span {
+        width: 70px;
+    }
+}
+
+.card-primary {
+    background-color: #B9FF66;
+    color: #000;
+}
+
+.card-secondary {
+    background-color: #F3F3F3;
+    color: #000;
+}
+
+.card-tertiary {
+    background-color: #191A23;
+    color: #FFF;
+}
+
+#Licences {
+    margin-inline: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    outline: #000 1px solid;
+    padding: 30px;
+    background-color: hsla(0, 0%, 95%, 1);
+    border-radius: 45px;
+    box-shadow: 0 5px 0 0 #191A23;
+}
+
+#Licences > div{
+    margin-top: 0;
+}
+
+.accordion {
+    --bs-accordion-color: var(--bs-body-color);
+    --bs-accordion-bg: hsla(0, 0%, 95%, 1);
+    --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+    --bs-accordion-border-color: var(--bs-border-color);
+    --bs-accordion-border-width: var(--bs-border-width);
+    --bs-accordion-border-radius: 45px;
+    --bs-accordion-inner-border-radius: 45px;
+    --bs-accordion-btn-padding-x: 2rem;
+    --bs-accordion-btn-padding-y: 3rem;
+    --bs-accordion-btn-color: var(--bs-body-color);
+    --bs-accordion-btn-bg: var(--bs-accordion-bg);
+    --bs-accordion-btn-icon: url("/img/plus-icon.svg");
+    --bs-accordion-btn-icon-width: 1.25rem;
+    --bs-accordion-btn-icon-transform: none;
+    --bs-accordion-btn-active-icon: url("/img/minus-icon.svg");
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-body-padding-x: 2rem;
+    --bs-accordion-body-padding-y: 2rem;
+    --bs-accordion-active-color: #000;
+    --bs-accordion-active-bg: #B9FF66;
+}
+
+.accordion-button::after {
+    background-image: url("/img/plus-icon.svg");
+    width: 58px;
+    height: 58px;
+    background-size: contain;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("/img/minus-icon.svg");
+    width: 58px;
+    height: 58px;
+    background-size: contain;
+}
+
+.accordion-item {
+    border: none;
+    outline: #000 1px solid;
+    border-radius: 45px;
+    box-shadow: 0 5px 0 0 #191A23;
+    overflow: hidden;
+}
+
+.accordion-button {
+    border: none;
+    border-radius: 45px 45px 0 0;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+.nav-link.btn {
+    color: #000;
+    background-color: #F3F3F3;
+    border-color: #F3F3F3;
+}
+
+.nav-link.btn.active {
+    color: #000;
+    background-color: #B9FF66;
+    border-color: #B9FF66;
+}
+
+.card {
+    padding: 15px;
+    border-radius: 45px;
+    border-color: #000;
+    box-shadow: 0 5px 0 0 #191A23;
+}
+
+#team .card div>div{
+    align-self: flex-end;
+}
+
+.card-body p {
+    padding-top: 10px;
+    border-top: #000 1px solid;
 }
