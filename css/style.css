@@ -21,7 +21,7 @@ header .navbar-toggler:focus {
 }
 
 header .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon {
-  background-image: url("../../img/menu-open.svg");
+  background-image: url("../img/menu-open.svg");
 }
 
 header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
