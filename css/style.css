@@ -21,11 +21,11 @@ header .navbar-toggler:focus {
 }
 
 header .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon {
-  background-image: url("/img/menu-open.svg");
+  background-image: url("img/menu-open.svg");
 }
 
 header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  background-image: url("/img/menu-close.svg");
+  background-image: url("img/menu-close.svg");
 }
 
 input {
@@ -158,10 +158,10 @@ input {
     --bs-accordion-btn-padding-y: 3rem;
     --bs-accordion-btn-color: var(--bs-body-color);
     --bs-accordion-btn-bg: var(--bs-accordion-bg);
-    --bs-accordion-btn-icon: url("/img/plus-icon.svg");
+    --bs-accordion-btn-icon: url("img/plus-icon.svg");
     --bs-accordion-btn-icon-width: 1.25rem;
     --bs-accordion-btn-icon-transform: none;
-    --bs-accordion-btn-active-icon: url("/img/minus-icon.svg");
+    --bs-accordion-btn-active-icon: url("img/minus-icon.svg");
     --bs-accordion-btn-focus-box-shadow: none;
     --bs-accordion-body-padding-x: 2rem;
     --bs-accordion-body-padding-y: 2rem;
@@ -170,14 +170,14 @@ input {
 }
 
 .accordion-button::after {
-    background-image: url("/img/plus-icon.svg");
+    background-image: url("img/plus-icon.svg");
     width: 58px;
     height: 58px;
     background-size: contain;
 }
 
 .accordion-button:not(.collapsed)::after {
-    background-image: url("/img/minus-icon.svg");
+    background-image: url("img/minus-icon.svg");
     width: 58px;
     height: 58px;
     background-size: contain;
@@ -262,11 +262,11 @@ input {
 }
 
 .carousel-control-prev-icon {
-    background-image: url("/img/Arrow-left.svg");
+    background-image: url("img/Arrow-left.svg");
 }
 
 .carousel-control-next-icon {
-    background-image: url("/img/Arrow-right.svg");
+    background-image: url("img/Arrow-right.svg");
 }
 
 .blockquote-footer {
